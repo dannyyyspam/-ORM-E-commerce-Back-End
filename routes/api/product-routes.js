@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   try {
-    const productsData = await Product.findAll({
+    const productsData = Product.findAll({
       include: [{ model: Category },{ model: Tag }]
     });
     res.status(200).json(productsData);
@@ -22,7 +22,7 @@ router.get('/:id', (req, res) => {
   // find a single product by its `id`
   // be sure to include its associated Category and Tag data
   try {
-    const singleProductData = await Product.findByPk(req.params.id, {
+    const singleProductData = Product.findByPk(req.params.id, {
       include: [{ model: Category },{ model: Tag }]
     });
 
@@ -114,18 +114,18 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   try {
-    const libraryCardData = await LibraryCard.destroy({
+    const singleProductData = Product.destroy({
       where: {
         id: req.params.id
       }
     });
 
-    if (!libraryCardData) {
-      res.status(404).json({ message: 'No library card found with that id!' });
+    if (!singleProductData) {
+      res.status(404).json({ message: 'No product found with that id!' });
       return;
     }
-
     res.status(200).json(libraryCardData);
+    
   } catch (err) {
     res.status(500).json(err);
   }

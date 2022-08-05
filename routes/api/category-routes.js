@@ -49,9 +49,14 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.update(req.body)
+  Category.update(req.body, {
+    where: {
+      id: req.params.id,
+    },
+  })
     .then((category) => {
-      res.status(200).json(category);
+      return singleCategoryData.findAll({ where: {category_id: req.params.id } });
+      // res.status(200).json(category);
     })
     .catch((err) => {
       console.log(err);

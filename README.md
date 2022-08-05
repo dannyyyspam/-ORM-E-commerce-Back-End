@@ -15,7 +15,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-
+- [Demo](#Demo)
 
 ## Description
 This application is a working back end server that can host an ecommerce website and the different requests that the owners and users would need to make from the server. It has routes for [CREATING, UPDATING, READING, DELETING]. There is no front end for the application built so the routes are going to be demonstrated in the walkthrough video. This project uses the following packages: 1.) dotenv: this package is used to store sensitive server information in a separate file that can be included in the .gitignore file when pushing the repo to Github. 2.)express.js: self explanitory. 3.) mysql2: is used for a part of this application as well, apparently.
@@ -72,3 +72,6 @@ Enter PW when promted
 
 ## Contributing
 :octocat: [Daniel A](https://github.com/dannyyyspam)
+
+## Demo
+- [Link to Demo Video](https://youtu.be/-e8k3rzEP4E)
